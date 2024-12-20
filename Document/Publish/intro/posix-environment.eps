@@ -14,6 +14,50 @@
 /tgifdict 132 dict def
 tgifdict begin
 
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
+
 %
 %	Using a zero value radius for an ellipse or an arc would result
 %		in a non-invertible CTM matrix which causes problem when this
@@ -398,6 +442,10 @@ end
 
 % <newfont> <asciifont> <kanjifont> eucfont
 /eucfont {
+    SHIFTMAPPEDeucfont
+} def
+
+/UNUSEDeucfont {
     12 dict begin
 	dup type /nametype eq { findfont } if
 	dup /WMode known {
@@ -443,6 +491,50 @@ end
 
 %%PageBoundingBox: 35 517 505 826
 tgifdict begin
+
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
 /tgifsavedpage save def
 
 1 setmiterlimit
@@ -495,7 +587,9 @@ grestore
 /Courier-Ryumin-Light-EUC-H /Courier /Ryumin-Light-EUC-H eucfont
 /Courier-Ryumin-Light-EUC-H findfont [10 0 0 -10 0 0] makefont setfont
    gsave
-      576 433 moveto (\245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320) show
+% !      576 433 moveto ( | \245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320 | ) show
+% !      576 433 moveto (¥Ç¥Ð¥¤¥¹¥É¥é¥¤¥Ð) show
+      576 433 moveto (\377\001\45\107\45\120\45\44\45\71\45\111\45\151\45\44\45\120) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -643,21 +737,27 @@ grestore
 /Courier-GothicBBB-Medium-EUC-H /Courier /GothicBBB-Medium-EUC-H eucfont
 /Courier-GothicBBB-Medium-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      216 397 moveto (\245\325\245\241\245\244\245\353\245\336\245\315\241\274\245\270\245\343\240\(FM\)) show
+% !      216 397 moveto ( | \245\325\245\241\245\244\245\353\245\336\245\315\241\274\245\270\245\343\240\(FM\) | ) show
+% !      216 397 moveto (¥Õ¥¡¥¤¥ë¥Þ¥Í¡¼¥¸¥ã (FM)) show
+      216 397 moveto (\377\001\45\125\45\41\45\44\45\153\45\136\45\115\41\74\45\70\45\143\40\377\000\50\106\115\51) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [18 0 0 -18 0 0] makefont setfont
    gsave
-      400 496 moveto (\303\346\277\264\263\313) show
+% !      400 496 moveto ( | \303\346\277\264\263\313 | ) show
+% !      400 496 moveto (Ãæ¿´³Ë) show
+      400 496 moveto (\377\001\103\146\77\64\63\113) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      128 301 moveto (\245\327\245\355\245\273\245\271\245\336\245\315\241\274\245\270\245\343\240\(PM\)) show
+% !      128 301 moveto ( | \245\327\245\355\245\273\245\271\245\336\245\315\241\274\245\270\245\343\240\(PM\) | ) show
+% !      128 301 moveto (¥×¥í¥»¥¹¥Þ¥Í¡¼¥¸¥ã (PM)) show
+      128 301 moveto (\377\001\45\127\45\155\45\73\45\71\45\136\45\115\41\74\45\70\45\143\40\377\000\50\120\115\51) show
    grestore
 
 % OVAL
@@ -680,7 +780,9 @@ grestore
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      472 389 moveto (\245\307\245\320\245\244\245\271\245\336\245\315\241\274\245\270\245\343\240\(DM\)) show
+% !      472 389 moveto ( | \245\307\245\320\245\244\245\271\245\336\245\315\241\274\245\270\245\343\240\(DM\) | ) show
+% !      472 389 moveto (¥Ç¥Ð¥¤¥¹¥Þ¥Í¡¼¥¸¥ã (DM)) show
+      472 389 moveto (\377\001\45\107\45\120\45\44\45\71\45\136\45\115\41\74\45\70\45\143\40\377\000\50\104\115\51) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -843,7 +945,9 @@ grestore
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      416 285 moveto (\245\341\245\342\245\352\245\336\245\315\241\274\245\270\245\343\240\(MM\)) show
+% !      416 285 moveto ( | \245\341\245\342\245\352\245\336\245\315\241\274\245\270\245\343\240\(MM\) | ) show
+% !      416 285 moveto (¥á¥â¥ê¥Þ¥Í¡¼¥¸¥ã (MM)) show
+      416 285 moveto (\377\001\45\141\45\142\45\152\45\136\45\115\41\74\45\70\45\143\40\377\000\50\115\115\51) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -961,7 +1065,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      304 77 moveto (POSIX\245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363) show
+% !      304 77 moveto ( | POSIX\245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363 | ) show
+% !      304 77 moveto (POSIX¥¢¥×¥ê¥±¡¼¥·¥ç¥ó) show
+      304 77 moveto (\120\117\123\111\130\377\001\45\42\45\127\45\152\45\61\41\74\45\67\45\147\45\163) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -1002,14 +1108,18 @@ grestore
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      712 43 moveto (\245\267\245\271\245\306\245\340\245\263\241\274\245\353\244\316\316\256\244\354) show
+% !      712 43 moveto ( | \245\267\245\271\245\306\245\340\245\263\241\274\245\353\244\316\316\256\244\354 | ) show
+% !      712 43 moveto (¥·¥¹¥Æ¥à¥³¡¼¥ë¤ÎÎ®¤ì) show
+      712 43 moveto (\377\001\45\67\45\71\45\106\45\140\45\63\41\74\45\153\44\116\116\56\44\154) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-GothicBBB-Medium-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      712 99 moveto (\245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354) show
+% !      712 99 moveto ( | \245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354 | ) show
+% !      712 99 moveto (¥á¥Ã¥»¡¼¥¸¤ÎÎ®¤ì) show
+      712 99 moveto (\377\001\45\141\45\103\45\73\41\74\45\70\44\116\116\56\44\154) show
    grestore
 
 grestore

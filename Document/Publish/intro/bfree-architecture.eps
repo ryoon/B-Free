@@ -14,6 +14,50 @@
 /tgifdict 132 dict def
 tgifdict begin
 
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
+
 %
 %	Using a zero value radius for an ellipse or an arc would result
 %		in a non-invertible CTM matrix which causes problem when this
@@ -398,6 +442,10 @@ end
 
 % <newfont> <asciifont> <kanjifont> eucfont
 /eucfont {
+    SHIFTMAPPEDeucfont
+} def
+
+/UNUSEDeucfont {
     12 dict begin
 	dup type /nametype eq { findfont } if
 	dup /WMode known {
@@ -443,6 +491,50 @@ end
 
 %%PageBoundingBox: 43 318 503 626
 tgifdict begin
+
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
 /tgifsavedpage save def
 
 1 setmiterlimit
@@ -571,14 +663,18 @@ grestore
 /Courier-Ryumin-Light-EUC-H /Courier /Ryumin-Light-EUC-H eucfont
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      728 716 moveto (\(CPU\244\316\)\245\346\241\274\245\266\245\342\241\274\245\311) show
+% !      728 716 moveto ( | \(CPU\244\316\)\245\346\241\274\245\266\245\342\241\274\245\311 | ) show
+% !      728 716 moveto ((CPUの)ユーザモード) show
+      728 716 moveto (\50\103\120\125\377\001\44\116\377\000\51\377\001\45\146\41\74\45\66\45\142\41\74\45\111) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      728 760 moveto (\(CPU\244\316\)\245\253\241\274\245\315\245\353\245\342\241\274\245\311) show
+% !      728 760 moveto ( | \(CPU\244\316\)\245\253\241\274\245\315\245\353\245\342\241\274\245\311 | ) show
+% !      728 760 moveto ((CPUの)カーネルモード) show
+      728 760 moveto (\50\103\120\125\377\001\44\116\377\000\51\377\001\45\53\41\74\45\115\45\153\45\142\41\74\45\111) show
    grestore
 
 % BOX
@@ -670,38 +766,54 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      752 400 moveto (\245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354) show
+% !      752 400 moveto ( | \245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354 | ) show
+% !      752 400 moveto (メッセージの流れ) show
+      752 400 moveto (\377\001\45\141\45\103\45\73\41\74\45\70\44\116\116\56\44\154) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      752 432 moveto (\245\267\245\271\245\306\245\340\245\263\241\274\245\353\244\316\316\256\244\354) show
+% !      752 432 moveto ( | \245\267\245\271\245\306\245\340\245\263\241\274\245\353\244\316\316\256\244\354 | ) show
+% !      752 432 moveto (システムコールの流れ) show
+      752 432 moveto (\377\001\45\67\45\71\45\106\45\140\45\63\41\74\45\153\44\116\116\56\44\154) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      208 640 moveto (\245\327\245\355\245\273\245\271) show
-      208 655 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      208 640 moveto ( | \245\327\245\355\245\273\245\271 | ) show
+% !      208 640 moveto (プロセス) show
+      208 640 moveto (\377\001\45\127\45\155\45\73\45\71) show
+% !      208 655 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      208 655 moveto (マネージャ) show
+      208 655 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      332 640 moveto (\245\325\245\241\245\244\245\353) show
-      332 655 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      332 640 moveto ( | \245\325\245\241\245\244\245\353 | ) show
+% !      332 640 moveto (ファイル) show
+      332 640 moveto (\377\001\45\125\45\41\45\44\45\153) show
+% !      332 655 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      332 655 moveto (マネージャ) show
+      332 655 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      460 640 moveto (\245\341\245\342\245\352) show
-      460 655 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      460 640 moveto ( | \245\341\245\342\245\352 | ) show
+% !      460 640 moveto (メモリ) show
+      460 640 moveto (\377\001\45\141\45\142\45\152) show
+% !      460 655 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      460 655 moveto (マネージャ) show
+      460 655 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % BOX
@@ -744,8 +856,12 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      596 640 moveto (\245\307\245\320\245\244\245\271) show
-      596 655 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      596 640 moveto ( | \245\307\245\320\245\244\245\271 | ) show
+% !      596 640 moveto (デバイス) show
+      596 640 moveto (\377\001\45\107\45\120\45\44\45\71) show
+% !      596 655 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      596 655 moveto (マネージャ) show
+      596 655 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -769,8 +885,12 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      192 556 moveto (GUI\(\245\246\245\243\245\363\245\311\245\246\)) show
-      192 571 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      192 556 moveto ( | GUI\(\245\246\245\243\245\363\245\311\245\246\) | ) show
+% !      192 556 moveto (GUI(ウィンドウ)) show
+      192 556 moveto (\107\125\111\50\377\001\45\46\45\43\45\163\45\111\45\46\377\000\51) show
+% !      192 571 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      192 571 moveto (マネージャ) show
+      192 571 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % BOX
@@ -786,8 +906,12 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      376 556 moveto (\262\276\277\310/\274\302\277\310) show
-      376 571 moveto (\245\336\245\315\241\274\245\270\245\343) show
+% !      376 556 moveto ( | \262\276\277\310/\274\302\277\310 | ) show
+% !      376 556 moveto (仮身/実身) show
+      376 556 moveto (\377\001\62\76\77\110\377\000\57\377\001\74\102\77\110) show
+% !      376 571 moveto ( | \245\336\245\315\241\274\245\270\245\343 | ) show
+% !      376 571 moveto (マネージャ) show
+      376 571 moveto (\377\001\45\136\45\115\41\74\45\70\45\143) show
    grestore
 
 % BOX
@@ -803,8 +927,12 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      528 556 moveto (\244\253\244\312\264\301\273\372\312\321\264\271) show
-      528 571 moveto (\245\265\241\274\245\320) show
+% !      528 556 moveto ( | \244\253\244\312\264\301\273\372\312\321\264\271 | ) show
+% !      528 556 moveto (かな漢字変換) show
+      528 556 moveto (\377\001\44\53\44\112\64\101\73\172\112\121\64\71) show
+% !      528 571 moveto ( | \245\265\241\274\245\320 | ) show
+% !      528 571 moveto (サーバ) show
+      528 571 moveto (\377\001\45\65\41\74\45\120) show
    grestore
 
 % BOX
@@ -821,7 +949,9 @@ grestore
 /Courier-Ryumin-Light-EUC-V /Courier /Ryumin-Light-EUC-V eucfont
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      89 400 moveto 90 rotate (\245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363) show
+% !      89 400 moveto 90 rotate ( | \245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363 | ) show
+% !      89 400 moveto 90 rotate (アプリケーション) show
+      89 400 moveto 90 rotate (\377\001\45\42\45\127\45\152\45\61\41\74\45\67\45\147\45\163) show
       -90 rotate 
    grestore
 
@@ -829,7 +959,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      85 556 moveto 90 rotate (\263\260\263\313) show
+% !      85 556 moveto 90 rotate ( | \263\260\263\313 | ) show
+% !      85 556 moveto 90 rotate (外核) show
+      85 556 moveto 90 rotate (\377\001\63\60\63\113) show
       -90 rotate 
    grestore
 
@@ -837,7 +969,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      85 660 moveto 90 rotate (\274\376\312\325\263\313) show
+% !      85 660 moveto 90 rotate ( | \274\376\312\325\263\313 | ) show
+% !      85 660 moveto 90 rotate (周辺核) show
+      85 660 moveto 90 rotate (\377\001\74\176\112\125\63\113) show
       -90 rotate 
    grestore
 
@@ -845,7 +979,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      192 444 moveto (\264\360\313\334\312\270\275\361\245\250\245\307\245\243\245\277) show
+% !      192 444 moveto ( | \264\360\313\334\312\270\275\361\245\250\245\307\245\243\245\277 | ) show
+% !      192 444 moveto (基本文書エディタ) show
+      192 444 moveto (\377\001\64\160\113\134\112\70\75\161\45\50\45\107\45\43\45\77) show
    grestore
 
 % BOX
@@ -861,14 +997,18 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      352 444 moveto (\264\360\313\334\277\336\267\301\245\250\245\307\245\243\245\277) show
+% !      352 444 moveto ( | \264\360\313\334\277\336\267\301\245\250\245\307\245\243\245\277 | ) show
+% !      352 444 moveto (基本図形エディタ) show
+      352 444 moveto (\377\001\64\160\113\134\77\136\67\101\45\50\45\107\45\43\45\77) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      768 603 moveto (\274\376\312\325\263\313\245\244\245\363\245\277\245\325\245\247\241\274\245\271) show
+% !      768 603 moveto ( | \274\376\312\325\263\313\245\244\245\363\245\277\245\325\245\247\241\274\245\271 | ) show
+% !      768 603 moveto (周辺核インタフェース) show
+      768 603 moveto (\377\001\74\176\112\125\63\113\45\44\45\163\45\77\45\125\45\47\41\74\45\71) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -883,7 +1023,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      708 515 moveto (\245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363\245\244\245\363\245\277\245\325\245\247\241\274\245\271) show
+% !      708 515 moveto ( | \245\242\245\327\245\352\245\261\241\274\245\267\245\347\245\363\245\244\245\363\245\277\245\325\245\247\241\274\245\271 | ) show
+% !      708 515 moveto (アプリケーションインタフェース) show
+      708 515 moveto (\377\001\45\42\45\127\45\152\45\61\41\74\45\67\45\147\45\163\45\44\45\163\45\77\45\125\45\47\41\74\45\71) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -935,7 +1077,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      372 504 moveto (\245\351\245\244\245\326\245\351\245\352\301\330) show
+% !      372 504 moveto ( | \245\351\245\244\245\326\245\351\245\352\301\330 | ) show
+% !      372 504 moveto (ライブラリ層) show
+      372 504 moveto (\377\001\45\151\45\44\45\126\45\151\45\152\101\130) show
    grestore
 
 % BOX
@@ -998,7 +1142,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      578 700 moveto 90 rotate (\245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320) show
+% !      578 700 moveto 90 rotate ( | \245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320 | ) show
+% !      578 700 moveto 90 rotate (デバイスドライバ) show
+      578 700 moveto 90 rotate (\377\001\45\107\45\120\45\44\45\71\45\111\45\151\45\44\45\120) show
       -90 rotate 
    grestore
 
@@ -1010,7 +1156,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      614 700 moveto 90 rotate (\245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320) show
+% !      614 700 moveto 90 rotate ( | \245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320 | ) show
+% !      614 700 moveto 90 rotate (デバイスドライバ) show
+      614 700 moveto 90 rotate (\377\001\45\107\45\120\45\44\45\71\45\111\45\151\45\44\45\120) show
       -90 rotate 
    grestore
 
@@ -1022,7 +1170,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      654 704 moveto 90 rotate (\245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320) show
+% !      654 704 moveto 90 rotate ( | \245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320 | ) show
+% !      654 704 moveto 90 rotate (デバイスドライバ) show
+      654 704 moveto 90 rotate (\377\001\45\107\45\120\45\44\45\71\45\111\45\151\45\44\45\120) show
       -90 rotate 
    grestore
 
@@ -1034,7 +1184,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      694 704 moveto 90 rotate (\245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320) show
+% !      694 704 moveto 90 rotate ( | \245\307\245\320\245\244\245\271\245\311\245\351\245\244\245\320 | ) show
+% !      694 704 moveto 90 rotate (デバイスドライバ) show
+      694 704 moveto 90 rotate (\377\001\45\107\45\120\45\44\45\71\45\111\45\151\45\44\45\120) show
       -90 rotate 
    grestore
 
@@ -1059,7 +1211,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      467 792 moveto (\262\276\301\333\265\255\262\261\264\311\315\375) show
+% !      467 792 moveto ( | \262\276\301\333\265\255\262\261\264\311\315\375 | ) show
+% !      467 792 moveto (仮想記憶管理) show
+      467 792 moveto (\377\001\62\76\101\133\65\55\62\61\64\111\115\175) show
    grestore
 
 % BOX

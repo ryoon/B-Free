@@ -14,6 +14,50 @@
 /tgifdict 132 dict def
 tgifdict begin
 
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
+
 %
 %	Using a zero value radius for an ellipse or an arc would result
 %		in a non-invertible CTM matrix which causes problem when this
@@ -398,6 +442,10 @@ end
 
 % <newfont> <asciifont> <kanjifont> eucfont
 /eucfont {
+    SHIFTMAPPEDeucfont
+} def
+
+/UNUSEDeucfont {
     12 dict begin
 	dup type /nametype eq { findfont } if
 	dup /WMode known {
@@ -443,6 +491,50 @@ end
 
 %%PageBoundingBox: 35 577 399 793
 tgifdict begin
+
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
 /tgifsavedpage save def
 
 1 setmiterlimit
@@ -458,7 +550,9 @@ gsave
 /Courier-Ryumin-Light-EUC-V /Courier /Ryumin-Light-EUC-V eucfont
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      571 208 moveto 90 rotate (\263\344\244\352\271\376\244\337\264\311\315\375) show
+% !      571 208 moveto 90 rotate ( | \263\344\244\352\271\376\244\337\264\311\315\375 | ) show
+% !      571 208 moveto 90 rotate (割り込み管理) show
+      571 208 moveto 90 rotate (\377\001\63\144\44\152\71\176\44\137\64\111\115\175) show
       -90 rotate 
    grestore
 
@@ -475,7 +569,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      167 256 moveto 90 rotate (\245\341\245\342\245\352\264\311\315\375) show
+% !      167 256 moveto 90 rotate ( | \245\341\245\342\245\352\264\311\315\375 | ) show
+% !      167 256 moveto 90 rotate (メモリ管理) show
+      167 256 moveto 90 rotate (\377\001\45\141\45\142\45\152\64\111\115\175) show
       -90 rotate 
    grestore
 
@@ -501,7 +597,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      479 212 moveto 90 rotate (\245\277\245\271\245\257\264\311\315\375) show
+% !      479 212 moveto 90 rotate ( | \245\277\245\271\245\257\264\311\315\375 | ) show
+% !      479 212 moveto 90 rotate (タスク管理) show
+      479 212 moveto 90 rotate (\377\001\45\77\45\71\45\57\64\111\115\175) show
       -90 rotate 
    grestore
 
@@ -509,7 +607,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      295 212 moveto 90 rotate (\273\376\264\326\264\311\315\375) show
+% !      295 212 moveto 90 rotate ( | \273\376\264\326\264\311\315\375 | ) show
+% !      295 212 moveto 90 rotate (時間管理) show
+      295 212 moveto 90 rotate (\377\001\73\176\64\126\64\111\115\175) show
       -90 rotate 
    grestore
 
@@ -526,7 +626,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      347 212 moveto 90 rotate (\245\267\245\271\245\306\245\340\264\311\315\375) show
+% !      347 212 moveto 90 rotate ( | \245\267\245\271\245\306\245\340\264\311\315\375 | ) show
+% !      347 212 moveto 90 rotate (システム管理) show
+      347 212 moveto 90 rotate (\377\001\45\67\45\71\45\106\45\140\64\111\115\175) show
       -90 rotate 
    grestore
 
@@ -544,7 +646,9 @@ grestore
 /Courier-Ryumin-Light-EUC-H /Courier /Ryumin-Light-EUC-H eucfont
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      276 177 moveto (\245\267\245\271\245\306\245\340\245\263\241\274\245\353\245\244\245\363\245\277\245\325\245\247\241\274\245\271) show
+% !      276 177 moveto ( | \245\267\245\271\245\306\245\340\245\263\241\274\245\353\245\244\245\363\245\277\245\325\245\247\241\274\245\271 | ) show
+% !      276 177 moveto (システムコールインタフェース) show
+      276 177 moveto (\377\001\45\67\45\71\45\106\45\140\45\63\41\74\45\153\45\44\45\163\45\77\45\125\45\47\41\74\45\71) show
    grestore
 
 % BOX
@@ -566,7 +670,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      325 437 moveto (\245\317\241\274\245\311\245\246\245\247\245\242) show
+% !      325 437 moveto ( | \245\317\241\274\245\311\245\246\245\247\245\242 | ) show
+% !      325 437 moveto (ハードウェア) show
+      325 437 moveto (\377\001\45\117\41\74\45\111\45\46\45\47\45\42) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -586,7 +692,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      144 221 moveto (\262\276\301\333\245\341\245\342\245\352\264\311\315\375) show
+% !      144 221 moveto ( | \262\276\301\333\245\341\245\342\245\352\264\311\315\375 | ) show
+% !      144 221 moveto (仮想メモリ管理) show
+      144 221 moveto (\377\001\62\76\101\133\45\141\45\142\45\152\64\111\115\175) show
    grestore
 
 % BOX
@@ -602,7 +710,9 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-V findfont [14 0 0 -14 0 0] makefont setfont
    gsave
-      407 208 moveto 90 rotate (\243\311\243\320\243\303\264\311\315\375) show
+% !      407 208 moveto 90 rotate ( | \243\311\243\320\243\303\264\311\315\375 | ) show
+% !      407 208 moveto 90 rotate (ＩＰＣ管理) show
+      407 208 moveto 90 rotate (\377\001\43\111\43\120\43\103\64\111\115\175) show
       -90 rotate 
    grestore
 

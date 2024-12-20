@@ -14,6 +14,50 @@
 /tgifdict 132 dict def
 tgifdict begin
 
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
+
 %
 %	Using a zero value radius for an ellipse or an arc would result
 %		in a non-invertible CTM matrix which causes problem when this
@@ -398,6 +442,10 @@ end
 
 % <newfont> <asciifont> <kanjifont> eucfont
 /eucfont {
+    SHIFTMAPPEDeucfont
+} def
+
+/UNUSEDeucfont {
     12 dict begin
 	dup type /nametype eq { findfont } if
 	dup /WMode known {
@@ -443,6 +491,50 @@ end
 
 %%PageBoundingBox: 34 633 361 823
 tgifdict begin
+
+
+
+%%Title: shiftmappedfont.ps
+%
+% <newfont> <asciifont> <kanjifont> SHIFTMAPPEDeucfont
+/SHIFTMAPPEDeucfont {
+    dup
+    /GothicBBB-Medium-EUC-H eq {
+	pop
+        /GothicBBB-Medium-H
+    } if
+    dup
+    /GothicBBB-Medium-EUC-V eq {
+	pop
+	/GothicBBB-Medium-V
+    } if
+    dup
+    /Ryumin-Light-EUC-H eq {
+	pop
+        /Ryumin-Light-H
+    } if
+    dup
+    /Ryumin-Light-EUC-V eq {
+	pop
+	/Ryumin-Light-V
+    } if
+    20 dict begin
+	/FontType 0 def
+	/WMode 0 def
+	/FMapType 3 def
+	/FontMatrix matrix def
+	/Encoding [1 0] def
+	/FontBBox {0 0 0 0} def
+	/FDepVector [ 4 2 roll
+	    findfont 1 scalefont
+	    exch
+	    findfont 1 scalefont
+	] def
+	/FontName exch def
+	FontName currentdict
+    end
+    definefont pop
+} def
 /tgifsavedpage save def
 
 1 setmiterlimit
@@ -527,7 +619,9 @@ grestore
 /Courier-Ryumin-Light-EUC-H /Courier /Ryumin-Light-EUC-H eucfont
 /Courier-Ryumin-Light-EUC-H findfont [18 0 0 -18 0 0] makefont setfont
    gsave
-      448 208 moveto (\274\376\312\325\263\313) show
+% !      448 208 moveto ( | \274\376\312\325\263\313 | ) show
+% !      448 208 moveto (周辺核) show
+      448 208 moveto (\377\001\74\176\112\125\63\113) show
    grestore
 
 % OVAL
@@ -639,7 +733,9 @@ closepath 1 setgray fill
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      240 203 moveto (BTRON\245\267\245\271\245\306\245\340\245\263\241\274\245\353) show
+% !      240 203 moveto ( | BTRON\245\267\245\271\245\306\245\340\245\263\241\274\245\353 | ) show
+% !      240 203 moveto (BTRONシステムコール) show
+      240 203 moveto (\102\124\122\117\116\377\001\45\67\45\71\45\106\45\140\45\63\41\74\45\153) show
    grestore
 
 % POLY/OPEN-SPLINE
@@ -714,15 +810,21 @@ grestore
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      520 51 moveto (\245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354) show
+% !      520 51 moveto ( | \245\341\245\303\245\273\241\274\245\270\244\316\316\256\244\354 | ) show
+% !      520 51 moveto (メッセージの流れ) show
+      520 51 moveto (\377\001\45\141\45\103\45\73\41\74\45\70\44\116\116\56\44\154) show
    grestore
 
 % TEXT
 0 setgray
 /Courier-Ryumin-Light-EUC-H findfont [12 0 0 -12 0 0] makefont setfont
    gsave
-      520 107 moveto (\277\277\244\316\245\267\245\271\245\306\245\340\245\263\241\274\245\353) show
-      520 121 moveto (\244\316\316\256\244\354) show
+% !      520 107 moveto ( | \277\277\244\316\245\267\245\271\245\306\245\340\245\263\241\274\245\353 | ) show
+% !      520 107 moveto (真のシステムコール) show
+      520 107 moveto (\377\001\77\77\44\116\45\67\45\71\45\106\45\140\45\63\41\74\45\153) show
+% !      520 121 moveto ( | \244\316\316\256\244\354 | ) show
+% !      520 121 moveto (の流れ) show
+      520 121 moveto (\377\001\44\116\116\56\44\154) show
    grestore
 
 % TEXT
